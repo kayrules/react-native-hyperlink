@@ -63,10 +63,11 @@ const Hyperlink = React.createClass({
         }
 
         elements.push(
-          <Text {...componentProps}
-            style={[component.props.style], [this.props.linkStyle]}
-            onPress={() => this.props.onPress && this.props.onPress(url)}
-            key={url}>{text}</Text>
+            <Text
+                onPress={() => this.props.onPress && this.props.onPress(url)}
+                key={url}>
+                <Text {...componentProps} style={[component.props.style], [this.props.linkStyle]}>{text}</Text>
+            </Text>
         );
       });
       elements.push(component.props.children.substring(_lastIndex, component.props.children.length));
